@@ -22,21 +22,18 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/mathlive/fonts",
-                "output": "/fonts"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/mathlive/sounds",
-                "output": "/sounds"
               }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/my-anees-package/dist/style.css"
+              "src/styles.css"
+            ],
+            "allowedCommonJsDependencies": [
+              "react",
+              "react-dom",
+              "react-dom/client",
+              "react/jsx-runtime",
+              "fuzzysort",
+              "extend"
             ]
           },
           "configurations": {
