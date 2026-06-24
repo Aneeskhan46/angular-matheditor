@@ -22,6 +22,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/mathlive/fonts",
+                "output": "/fonts"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/mathlive/sounds",
+                "output": "/sounds"
               }
             ],
             "styles": [
