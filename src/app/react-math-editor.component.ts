@@ -2,8 +2,6 @@ import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, Input } fro
 import { createRoot, Root } from 'react-dom/client';
 import { createElement } from 'react';
 import { CustomMathEditor } from 'my-anees-package';
-import 'my-anees-package/style.css';
-import 'ckeditor5/ckeditor5.css';
 
 @Component({
   selector: 'app-react-math-editor',

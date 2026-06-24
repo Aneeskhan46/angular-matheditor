@@ -35,7 +35,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/my-anees-package/dist/style.css",
+              "node_modules/ckeditor5/dist/ckeditor5.css"
             ],
             "allowedCommonJsDependencies": [
               "react",
