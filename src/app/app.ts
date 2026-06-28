@@ -10,4 +10,5 @@ import { ReactMathEditorComponent } from './react-math-editor.component';
 })
 export class App {
   protected readonly title = signal('my-anees-app');
+  editorValue = '';
 }

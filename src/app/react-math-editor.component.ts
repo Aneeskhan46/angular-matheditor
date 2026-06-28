@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { createRoot, Root } from 'react-dom/client';
 import { createElement } from 'react';
 import { CustomMathEditor } from 'my-anees-package';
@@ -15,9 +15,10 @@ import { CustomMathEditor } from 'my-anees-package';
     }
   `]
 })
-export class ReactMathEditorComponent implements AfterViewInit, OnDestroy {
+export class ReactMathEditorComponent implements AfterViewInit, OnDestroy, OnChanges {
   @ViewChild('reactContainer', { static: true }) container!: ElementRef;
   @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
 
   private root!: Root;
 
@@ -39,6 +40,11 @@ export class ReactMathEditorComponent implements AfterViewInit, OnDestroy {
   }
 
   private render() {
-    this.root.render(createElement(CustomMathEditor, { value: this.value }));
+    this.root.render(createElement(CustomMathEditor, { 
+      value: this.value,
+      onChange: (newValue: string) => {
+        this.valueChange.emit(newValue);
+      }
+    }));
   }
 }
